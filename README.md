@@ -1,55 +1,54 @@
-# This is the capstone project for the 2023 [machine learning zoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp) 
+# Capstone Project for the 2023 Machine Learning Zoomcamp
 
+## Table of Contents
 
-## Table of contents
-
-- [1. About the project](#topic1)
-- [2. Project files and folder explained](#topic2)
+- [1. About the Project](#topic1)
+- [2. Project Files and Folder Structure](#topic2)
 - [3. Dataset](#topic3)
-- [4. Running this project](#topic4)
-- [5. Setup project locally](#topic5)
-- [6. Project deployment](#topic6)
+- [4. Running this Project](#topic4)
+- [5. Set Up Project Locally](#topic5)
+- [6. Project Deployment](#topic6)
 
-<h2 id="topic1"> 1. About the project</h2> 
+<h2 id="topic1">1. About the Project</h2> 
 
-This capstone project is a part of the [Machine Learning Zoomcamp course](https://github.com/DataTalksClub/machine-learning-zoomcamp) held by [DataTalks.Club](https://datatalks.club/). It aims to create a  **Real-Time Flowers Classification Service**. In this work I designed three different models: Simple Perceptorn, Vanila CNN and finetuned Xception model(which was used as final model), aplied such techliques as regularisation, augmentation and dependency removal of tensoflow library. Furthermore, this model and other dependencies were containarized and psuhed to AWS ECR and, finally, that image was used to build AWS Lambda Function. 
+This capstone project is part of the [Machine Learning Zoomcamp course](https://github.com/DataTalksClub/machine-learning-zoomcamp) held by [DataTalks.Club](https://datatalks.club/). Its goal is to create a **Real-Time Flowers Classification Service**. In this work, I designed three different models: Simple Perceptron, Vanilla CNN, and a finetuned Xception model (which was used as the final model). I applied techniques such as regularization, augmentation, and dependency removal of the TensorFlow library. Furthermore, this model and other dependencies were containerized and pushed to AWS ECR. Finally, that image was used to build an AWS Lambda Function.
 
-### The goal of the project
-The model learns from the data to distinguish the species. When provided with new image of flower, the model will be able to generate probabilities of every class. Following  this training, the model can be deployed for real-world usage in a production environment.
+### The Goal of the Project
+The model learns from the data to distinguish the species. When provided with a new image of a flower, the model will be able to generate probabilities for every class. Following this training, the model can be deployed for real-world usage in a production environment.
 
-<img src="media/christmas_flowers_dataset_0.jpg" alt=Flwers width="600" height="400">
+![Flowers](media/christmas_flowers_dataset_0.jpg)
 
-<h2 id="topic2"> 2. Project  files and folders structure</h2> 
+<h2 id="topic2">2. Project Files and Folder Structure</h2> 
 
-This project constains the following files:
+This project contains the following files:
 
-- **flowers/\***  The dataset contains 16 sub-directories, one per class: There are 15,740 total images.(**Note**  this folder is not present in the repo, thus you need to download [it](#topic3) )
+- **flowers/\***: The dataset contains 16 sub-directories, one per class, with a total of 15,740 images. (**Note:** this folder is not present in the repo, so you need to download [it](#topic3)).
 
-- **EDA.ipynb:** This is a Jupyter Notebook where I carried out exploratory (EDA) data analysis on the dataset.
-- **train.ipynb:** This is a Jupyter Notebook where I carried out trainng phase (Using  [**Saturn Cloud**](https://app.community.saturnenterprise.io/)).
+- **EDA.ipynb:** This Jupyter Notebook carries out exploratory data analysis (EDA) on the dataset.
+- **train.ipynb:** This Jupyter Notebook carries out the training phase (using [**Saturn Cloud**](https://app.community.saturnenterprise.io/)).
 
-- **models/xception_v2_01_0.811.h5:** trained model
-- **models/flower-model.tflite:** converted tflite model
+- **models/xception_v2_01_0.811.h5:** Trained model.
+- **models/flower-model.tflite:** Converted TFLite model.
 
-- **train.py:** the Python script used to train the model
-- **test.py:**  the Python script used to test the model locally
-- **test-aws.py:** the Python script used to test aws lambda function. 
-- **convert.py:** the Python script used to convert keras model to  tflite model.
+- **train.py:** The Python script used to train the model.
+- **test.py:** The Python script used to test the model locally.
+- **test-aws.py:** The Python script used to test the AWS Lambda function.
+- **convert.py:** The Python script used to convert the Keras model to a TFLite model.
   
-- **lambda_function.py** This is the main Python used in the deployment. Contains  preppocessing, and  uses tflite_runtime model for inference. it wil be the function on AWS Lamba.
+- **lambda_function.py:** This is the main Python file used in the deployment. It contains preprocessing and uses the TFLite runtime model for inference. It will be the function on AWS Lambda.
 
-- **Pipfile & Pipfile.lock** These are configuration files used for managing Python dependencies and packages in this project
+- **Pipfile & Pipfile.lock:** These are configuration files used for managing Python dependencies and packages in this project.
 
-- **dockerfile** This is a docker image file for deploying the model to docker container
+- **dockerfile:** This is a Docker image file for deploying the model to a Docker container.
 
-Everything is put into contaner on AWS ECR then an AWS Lambda Function is created from this ECR image.  
+Everything is put into a container on AWS ECR, and then an AWS Lambda Function is created from this ECR image.
 
 <h2 id="topic3">3. Dataset</h2> 
 
-To download the dataset into root folder use this [link](https://www.kaggle.com/datasets/l3llff/flowers/). You can utilize handy lib `opendatasets` for that. Get  `kaggle.json` from  https://www.kaggle.com/settings and put the file into the root folder (or insert login, api_key in the input). Run first cell in `train.ipynb`.
+To download the dataset into the root folder, use this [link](https://www.kaggle.com/datasets/l3llff/flowers/). You can utilize the handy library `opendatasets` for that. Get `kaggle.json` from [here](https://www.kaggle.com/settings) and put the file into the root folder (or insert login, api_key in the input). Run the first cell in `train.ipynb`.
 
-<h2 id="topic4"> 4. Running this project</h2> 
-<h3 id="running1">To try out this project, follow  these steps:</h3> 
+<h2 id="topic4">4. Running this Project</h2> 
+<h3 id="running1">To try out this project, follow these steps:</h3> 
 
 1. Clone this repository by running this command: 
 
