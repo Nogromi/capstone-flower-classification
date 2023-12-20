@@ -7,8 +7,8 @@
 - [2. Project files and folder explained](#topic2)
 - [3. Dataset](#topic3)
 - [4. Running this project](#topic4)
-- [4. Running this project](#topic5)
-- [5. Project demonstration](#topic6)
+- [4. Setup project locally](#topic5)
+- [5.  Project deployment](#topic6)
 
 <h2 id="topic1"> 1. About the project</h2> 
 
@@ -64,7 +64,7 @@ To download the dataset into root folder use this [link](https://www.kaggle.com/
 6. Alternativelly, run `python test-aws.py` 
 This script request AWS Lambda Function. I will keep this  service running approzimatelly for two weeks after 12/18/2023 project.
 
-<h2  id="topic5"> Setup project locally</h3> 
+<h2  id="topic5">5. Setup project locally</h3> 
 
 <h3> Setting up the environment</h3> 
 
@@ -77,6 +77,6 @@ pipenv shell #Activate virtual environment
 
 
    
-<h2 id="topic6"> 4. Project deployment</h2> 
+<h2 id="topic6"> 6. Project deployment</h2> 
 
 If you have any questions, reach out to me via email at anatolii.krivko@gmail.com
