@@ -11,7 +11,7 @@
 
 <h2 id="topic1">1. About the Project</h2> 
 
-This capstone project is part of the [Machine Learning Zoomcamp course](https://github.com/DataTalksClub/machine-learning-zoomcamp) held by [DataTalks.Club](https://datatalks.club/). Its goal is to create a **Real-Time Flowers Classification Service**. In this work, I designed three different models: Simple Perceptron, Vanilla CNN, and a finetuned Xception model (which was used as the final model). I applied techniques such as regularization, augmentation, and dependency removal of the TensorFlow library. Furthermore, this model and other dependencies were containerized and pushed to AWS ECR. Finally, that image was used to build an AWS Lambda Function.
+This capstone project is part of the [Machine Learning Zoomcamp course](https://github.com/DataTalksClub/machine-learning-zoomcamp) held by [DataTalks.Club](https://datatalks.club/). I set a goal to create a **Real-Time Flowers Classification Service**. In this work, I designed three different models: Simple Perceptron, Vanilla CNN, and a finetuned Xception model (which was used as the final model). I applied techniques such as regularization, augmentation, and dependency removal of the TensorFlow library. Furthermore, this model and other dependencies were containerized and pushed to AWS ECR. Finally, that image was used to build an AWS Lambda Function.
 
 ### The Goal of the Project
 The model learns from the data to distinguish the species. When provided with a new image of a flower, the model will be able to generate probabilities for every class. Following this training, the model can be deployed for real-world usage in a production environment.
@@ -212,5 +212,13 @@ Follow the instructions [here](https://youtu.be/wyZ9aqQOXvs?list=PL3MmuxUbc_hIhx
 
 - Create a REST API (POST METHOD: /predict) with the Lambda function created above.
 - Test the API Gateway using the `test-aws.py` script.
+
+Proof API Gateway works well.
+
+[video](https://clipchamp.com/watch/XnSdSyoPanO)
+
+
+![test-a](media/Screenshot_2.png)
+
 
 If you have any questions, reach out to me via email at anatolii.krivko@gmail.com
