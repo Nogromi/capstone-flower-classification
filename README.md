@@ -202,4 +202,15 @@ push image to ${REMOTE_URI}
 (base) $~> docker push ${REMOTE_URI}
 ```
 
+# Create AWS Lambda Function
+
+To create, configure, and test the Lambda function, follow the instructions in this [video](https://youtu.be/kBch5oD5BkY?list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR&t=457). Test it on the above URL and get identical results.
+
+# Create and Configure AWS API Gateway
+
+Follow the instructions [here](https://youtu.be/wyZ9aqQOXvs?list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR):
+
+- Create a REST API (POST METHOD: /predict) with the Lambda function created above.
+- Test the API Gateway using the `test-aws.py` script.
+
 If you have any questions, reach out to me via email at anatolii.krivko@gmail.com
