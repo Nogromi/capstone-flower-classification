@@ -7,9 +7,6 @@ RUN pipenv install --system --deploy
 
 COPY models/flower-model.tflite models/
 
-# RUN pipenv install tflite_runtime
-# RUN pipenv install Pillow numpy
-
 COPY lambda_function.py .
 
 CMD [ "lambda_function.lambda_handler" ]
